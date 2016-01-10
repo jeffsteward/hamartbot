@@ -1,0 +1,13 @@
+{
+  "name": "hambot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.67.0",
+    "sync-request": "^2.0.1",
+    "twit": "^2.1.1"
+  }
+}
