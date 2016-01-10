@@ -1,3 +1,7 @@
+# Information
+
+Tweeting at [@hamartbot](https://twitter.com/hamartbot).  
+
 # References
 
 There are so many good examples of Twitter bots. Here are a few that I used. 
