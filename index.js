@@ -29,5 +29,10 @@ T.post('media/upload', { media_data: b64content}, function(err, data, response) 
 	var statusMessage = o.records[0].title + ' ' + o.records[0].url;
 	T.post('statuses/update', { status: statusMessage, media_ids: [mediaID] }, function(err, data, response) {
 	  console.log(data)
+
+	  if (!err) {
+	  	//Keep a log of the objects that have been tweeted
+	  	fs.appendFileSync('tweet_log.txt', data.id_str + ',' + o.records[0].id + ',' + o.records[0].url + ',' + data.created_at);
+	  }
 	});
 });
