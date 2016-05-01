@@ -32,7 +32,7 @@ T.post('media/upload', { media_data: b64content}, function(err, data, response) 
 
 	  if (!err) {
 	  	//Keep a log of the objects that have been tweeted
-	  	fs.appendFileSync('tweet_log.txt', data.id_str + ',' + o.records[0].id + ',' + o.records[0].url + ',' + data.created_at);
+	  	fs.appendFileSync('tweet_log.txt', data.id_str + ',' + o.records[0].id + ',' + o.records[0].url + ',' + data.created_at + '\r\n');
 	  }
 	});
 });
