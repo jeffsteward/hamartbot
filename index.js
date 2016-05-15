@@ -4,12 +4,19 @@ var fs = require("fs"),
 	Twit = require("twit"),
 	config = require("./config.js");
 
-var apiURL = 'http://api.harvardartmuseums.org';
+var apiURL = 'http://api.harvardartmuseums.org/object';
 var apiKey = config.ham.apikey;
 
+var queryString = {
+	apikey: apiKey,
+	sort: "random",
+	hasimage: 1, 
+	size: 1,
+	fields: "title,primaryimageurl,url"
+};
 
 //Fetch some stuff from the HAM API
-var res = syncrequest('GET', apiURL + '/object?apikey=' + apiKey + '&sort=random&hasimage=1&size=1&fields=title,primaryimageurl,url');
+var res = syncrequest('GET', apiURL, {qs: queryString});
 var o = JSON.parse(res.getBody())
 
 //Fetch the art image
